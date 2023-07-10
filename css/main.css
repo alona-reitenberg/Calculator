@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
+}
+
+html {
+  width:100vw;
+  height: 100vh;
+}
+
+:root {
+    --bg-color-main: hsl(222, 26%, 31%);
+    --bg-color-toggle: hsl(223, 31%, 20%);
+    --bg-color-screen: hsl(224, 36%, 15%);
+    
+    --font-color-header:#fff;
+    --font-color-primary: hsl(221, 14%, 31%);
+    
+
+    --key-color-main:hsl(30, 25%, 89%);
+    --key-color-main-shadow:  hsl(28, 16%, 65%);
+    --key-color-side: hsl(225, 21%, 49%);
+    --key-color-side-shadow: hsl(224, 28%, 35%);
+    --key-color-equal:hsl(6, 63%, 50%);
+    --key-color-equal-shadow:hsl(6, 70%, 34%);
+}
+
+body {
+  background: var(--bg-color-main);
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.calc__header {
+  width:510px;
+  color: var(--font-color-header);
+  position: relative;
+  display: flex;
+  align-items: center;  
+  top:10px;
+}
+
+.theme__numbers {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  top:10px;
+}
+
+.theme__numbers ol{
+  display: flex;
+  list-style-type: none;
+}
+
+ol li {
+  padding-left:15px;
+}
+
+.calc__title {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.theme__title {
+  font-size: 16px;
+  margin-top: 40px;
+  margin-left: 280px;
+}
+
+
+.toggle_radio{
+  position: relative;
+  background: var(--bg-color-toggle);
+  margin: 4px auto;
+  overflow: hidden;
+  padding: 0 !important;
+  border-radius: 50px;
+  position: relative;
+  height: 20px;
+  width: 72px;
+  transition: all .4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+  margin-right: 0;
+  background: var(--bg-color-toggle);
+}
+
+.toggle_radio.theme1 {transition: all .4s ease;}
+.toggle_radio.theme2 {transition: all .4s ease;}
+.toggle_radio.theme3 {transition: all .4s ease;}
+.toggle_radio > * {
+  float: left;
+}
+
+.toggle_radio input[type=radio] {
+  display: none;
+  /*position: fixed;*/
+}
+
+.toggle_radio label{
+  color: rgba(255,255,255,.9);
+  z-index: 0;
+  display: block;
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+  text-align: center;
+  position:relative; top:2px;
+}
+
+.toggle_option_slider{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 3px;
+  border-radius: 50px;
+  transition: all .4s ease;
+  background: var(--key-color-equal);
+
+}
+
+#first_toggle:checked ~ .toggle_option_slider{
+  left: 4px;
+}
+#second_toggle:checked ~ .toggle_option_slider{
+  left: 28px;
+}
+#third_toggle:checked ~ .toggle_option_slider{
+  left: 52px;
+}
+
+
+.calculator {
+  /* display: flex; */
+  /* position:absolute; */
+  top:100px;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+
+}
+
+.calculator__input {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-around;
+  width:510px;
+  height: 85px;
+  border-radius:10px;
+  padding: 10px;
+  background: var(--bg-color-input);
+  margin-bottom: 20px;
+  color: var(--font-color-input);
+  font-size: 32px;
+}
+
+.previous__operand {
+  opacity: .8;
+  font-size:16px;
+}
+
+.current__operand {
+
+  font-size: 32px;
+}
+
+.calculator__buttons {
+  display: grid;
+  border-radius: 10px;
+  padding: 20px;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(5,70px);
+  justify-content: center;
+  align-content: center;
+  background: var(--bg-color-screen);
+
+}
+
+.btn {
+  color:var(--font-color-primary);
+  font-size:24px;
+  border:1px solid black;
+  cursor: pointer;
+  border-radius: 4px;
+  background: var(--key-color-main);
+  box-shadow: 0 4px var(--key-color-main-shadow);
+  margin:6px 6px 6px 8px;
+  outline: none;
+  border: none;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.bg-side {
+  color:var(--font-color-side-key);
+  background: var(--key-color-side);
+  box-shadow: 0 4px var(--key-color-side-shadow);
+
+}
+
+.bg-equal {
+  background: var(--key-color-equal);
+  box-shadow: 0 4px var(--key-color-equal-shadow);
+}
+
